@@ -1,0 +1,22 @@
+{% extends 'app1_db/header.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="row">
+            {% for dep in departments %}
+                <div class="col s12 m6 l4">
+                    <a href="{{dep.department_slug}}", style="color:#000">
+                        <div class="card hoverable">
+                            <div class="card-content">
+                                <div class="card-title">{{dep.department_name}}</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h1 style="text-align:center; font-size:500%; color:rgb(255,255,255); background-color:rgba(0,0,0,0.5); border-radius:10px;">Welcome to TutorMaina</h1>
+
+    {% endif %}
+{% endblock %}

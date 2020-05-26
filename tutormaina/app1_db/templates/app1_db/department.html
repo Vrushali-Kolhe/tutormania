@@ -1,0 +1,20 @@
+{% extends 'app1_db/header.html' %}
+
+{% block content %}
+
+    <div class="row">
+        {% for course in course_series %}
+
+                <a href="{{course.course_slug}}", style="color:#000">
+                    <div class="card hoverable">
+                        <div class="card-content">
+                            <div class="card-title">{{course.course_name}}</div>
+                            <!--<p style="font-size:70%">Published {{tut.tutorial_published}}</p>-->
+                            <p>{{course.course_outcome}}</p>
+                        </div>
+                    </div>
+                </a>
+
+        {% endfor %}
+    </div>
+{% endblock %}
